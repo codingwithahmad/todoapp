@@ -5,3 +5,7 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Hello from todo app")
+
+
+def create(request):
+    return render(request, 'todo/create.html')

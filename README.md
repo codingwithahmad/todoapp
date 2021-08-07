@@ -6,4 +6,5 @@ Todo
 - [x] Set urls for todo app
 - [x] Make note model and migrate
 - [x] Add Note module to admin panel
+- [x] Create a page with form for create view
 - [ ] Make View for create a note
