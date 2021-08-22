@@ -7,4 +7,4 @@ Todo
 - [x] Make note model and migrate
 - [x] Add Note module to admin panel
 - [x] Create a page with form for create view
-- [ ] Make View for create a note
+- [x] Make View for create a note
