@@ -7,5 +7,9 @@ class Note(models.Model):
     time = models.DateTimeField(default=timezone.now, verbose_name="زمان")
     desc = models.TextField(verbose_name="توضیحات")
 
+    class Meta:
+        verbose_name = "نوشته"
+        verbose_name_plural = "نوشته ها"
+
     def __str__(self):
         return self.title

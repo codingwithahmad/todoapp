@@ -1,0 +1,7 @@
+{% for note in notes %}
+<article>
+	<h3>{{note.title}}</h3>
+	<span>{{ note.time }}</span>
+	<p>{{ note.desc }}</p>
+</article>
+{% endfor %}
