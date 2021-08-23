@@ -1,9 +1,10 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Note(models.Model):
     title = models.CharField(max_length=200, verbose_name="عنوان")
-    time = models.DateTimeField(verbose_name="زمان")
+    time = models.DateTimeField(default=timezone.now, verbose_name="زمان")
     desc = models.TextField(verbose_name="توضیحات")
 
     def __str__(self):

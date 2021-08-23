@@ -8,3 +8,4 @@ Todo
 - [x] Add Note module to admin panel
 - [x] Create a page with form for create view
 - [x] Make View for create a note
+- [x] Add DateTimePicker for time field in NoteCreate view
