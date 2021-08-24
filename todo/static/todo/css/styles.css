@@ -11282,15 +11282,19 @@ html {
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
+
 }
 
 .content-section-heading h2, .content-section-heading .h2 {
   font-size: 3rem;
+  background-color: red;
+  color: white;
 }
 .content-section-heading h3, .content-section-heading .h3 {
   font-size: 1rem;
   text-transform: uppercase;
 }
+
 
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
@@ -11496,6 +11500,7 @@ footer.footer .social-link:hover {
   background-color: rgba(33, 37, 41, 0.2);
   position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
   z-index: 1;
 }
