@@ -12,6 +12,13 @@ db.sqlite3
 db.sqlite3-journal
 media
 config/config.py
+todo/static/todo/assets/
+todo/static/todo/wall.jpg
+todo/static/todo/css/Sahel-Black.ttf
+todo/static/todo/css/Sahel-Bold.ttf 
+todo/static/todo/css/Sahel.ttf 
+todo/static/todo/css/Sahel-Light.ttf 
+todo/static/todo/css/Sahel-SemiBold.ttf
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.

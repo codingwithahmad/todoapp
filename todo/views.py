@@ -24,4 +24,4 @@ class AllNote(ListView):
     model = Note
     context_object_name = "notes"
     queryset = Note.objects.all()
-    template_name = "todo/home.html"
+    template_name = "todo/index.html"
