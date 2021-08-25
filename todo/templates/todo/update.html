@@ -1,0 +1,53 @@
+{% extends 'todo/base.html' %}
+
+{% load static %}
+
+
+
+
+{% block script %}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- XDSoft DateTimePicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+
+{% block main %}
+{% load crispy_forms_tags %}
+<section class="content-section" id="portfolio">
+    <div class="container px-4 px-lg-5">
+      <div class="content-section-heading text-center">  
+                    <h3 class="mb-5 my-2">اطلاعات نوشته</h3>
+      </div>
+      <div class="row gx-0">
+                  <form method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                          <div>
+                            {{ form.title|as_crispy_field }}
+                          </div>
+                          <div class="input-group date my-3" id="datetimepicker1" data-target-input="nearest">
+                          {{ form.time|as_crispy_field }}
+                            <div class="input-group-append my-4 mx-2" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                          </div>
+                          <div>
+                            {{ form.desc|as_crispy_field }}
+                          </div>
+                        <button class="btn btn-success my-3">ویرایش نوشته</button>
+                  </form>
+      </div>  
+    </div>
+</section>
+
+<script>
+  $(function () {
+    $("#datetimepicker1").datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+    });
+  });
+</script>
+{% endblock %}

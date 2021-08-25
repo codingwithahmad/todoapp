@@ -1,0 +1,20 @@
+{% extends 'todo/base.html' %}
+
+{% load static %}
+
+{% block main %}
+<section class="content-section" id="portfolio">
+    <div class="container px-4 px-lg-5">
+      <div class="content-section-heading text-center">  
+                    <h3 class="mb-5 my-2">حذف نوشته</h3>
+      </div>
+      <div class="row gx-0">
+        <form method="post" class="text-center">
+                  {% csrf_token %}
+                  <h3 class="mb-5">آیا از حذف «{{ object.title }}» اطمینان دارید؟</h3>
+                  <input type="submit" value="حذف" class="btn btn-danger">
+        </form>
+      </div>  
+    </div>
+</section>
+{% endblock %}
