@@ -4,23 +4,28 @@ from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from .models import Note
 from .forms import NoteForm
 from django.urls import reverse, reverse_lazy
+from account.mixins import (
+    FormValid,
+    FieldsMixin,
+)
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse("Hello from todo app")
 
 
-class NoteCreate(CreateView):
+class NoteCreate(FieldsMixin, FormValid, CreateView):
     model = Note
     template_name = "todo/create.html"
-    form_class = NoteForm
+    fields = "__all__"
 
     def get_success_url(self):
         return reverse('todo:home')
 
 
-class AllNote(ListView):
+class AllNote(LoginRequiredMixin, ListView):
     model = Note
     context_object_name = "notes"
     queryset = Note.objects.all()
@@ -45,8 +50,8 @@ class NoteDelete(DeleteView):
     success_url = reverse_lazy("todo:home")
     template_name = "todo/delete.html"
 
-class NoteUpdate(UpdateView):
+class NoteUpdate(FieldsMixin, FormValid, UpdateView):
     model = Note
-    form_class = NoteForm
+    fields = "__all__"
     template_name = "todo/update.html"
     success_url = reverse_lazy("todo:home")

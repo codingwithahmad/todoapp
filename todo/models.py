@@ -7,7 +7,7 @@ class Note(models.Model):
     title = models.CharField(max_length=200, verbose_name="عنوان")
     time = models.DateTimeField(default=timezone.now, verbose_name="زمان")
     desc = models.TextField(verbose_name="توضیحات")
-    write = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="نویسنده")
+    writer = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="نویسنده")
 
     class Meta:
         verbose_name = "نوشته"

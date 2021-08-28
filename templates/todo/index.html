@@ -2,6 +2,12 @@
 
 {% load static %}
 
+{% block title %}
+
+لیست نوشته ها
+  
+{% endblock %}
+
 
 {% block main %}
 <section class="content-section" id="portfolio">
@@ -29,6 +35,7 @@
                       </div>
                       <div class="card-footer border-dark text-black">
                         {{ note.time }}
+                        <span>{{ note.writer }} :نویسنده </span>
                       </div>
                 </div>
             {% endfor %}

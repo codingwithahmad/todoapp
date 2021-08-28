@@ -29,9 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-LOGIN_REDIRECT = "todo:home"
-
-
+LOGIN_REDIRECT_URL = "todo:home"
+LOGOUT_REDIRECT_URL = "account:login"
+LOGIN_URL = "account:login"
 # Application definition
 
 INSTALLED_APPS = [
